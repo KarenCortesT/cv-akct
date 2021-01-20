@@ -1,0 +1,314 @@
+@import "./scss/index.scss";
+
+.cardContainer{
+  width: 100/3;
+      height: 100px;
+      background:radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  }
+  
+  
+  .card{
+      cursor: pointer;
+      width: 360px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width:$media-breakpoint-down-lg) {
+          width: 160px;
+          height: 70px;
+      }
+      @media (min-width:$media-breakpoint-up-sm) {
+          font-size: 0em + 20px/ $defaultFontSize;
+          width: 100%;
+          height: 80px;
+      }
+  
+      @media (max-width:$media-breakpoint-down-sm) {
+          width: 60px;
+          height: 70px;
+      }
+  
+  
+  } 
+  %both{
+      width: 340px;
+      height: 80px;
+      color:#171819; 
+      background:#F2F6FB; 
+      font-size: 0em + 25px/ $defaultFontSize;
+      backface-visibility: hidden;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform .6s linear;
+      @media (max-width:$media-breakpoint-down-lg) {
+          width: 180px;
+          height: 80px;
+      }
+  
+      @media (min-width:$media-breakpoint-up-sm) {
+          font-size: 0em + 20px/ $defaultFontSize;
+          width: 150px;
+          height: 80px;
+      }
+      @media (min-width:$media-breakpoint-up-md) {
+          font-size: 0em + 20px/ $defaultFontSize;
+          width: 280px;
+          height: 80px;
+      }
+      
+  
+      @media (max-width:$media-breakpoint-down-sm) {
+          font-size: 0em + 20px/ $defaultFontSize;
+          width: 100px;
+          height: 80px;
+      }
+  }
+  
+  .front{
+      @extend %both;
+      transform: perspective(600px) rotateY(0deg); 
+                  
+                 
+  }
+   .back{
+      @extend %both;
+      transform:perspective(600px) rotateY(180deg);
+  
+  }
+  
+  .card:hover > .front{
+      transform: perspective(600px) rotateY(-180deg);
+  }
+  .card:hover > .back{
+      transform: perspective(600px) rotateY(0deg);
+  }
+  
+  %circle {
+      
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      display: inline-block;
+      position: absolute;
+      
+  }
+    
+  
+  .app {
+  
+      &__header{
+          background: rgb(238,174,202);
+          background: $background-multicolor;
+          height:50vh;
+          
+          display: flex;
+          justify-content: center;
+  
+          @media (max-width:$media-breakpoint-down-md) {
+              height:70vh ;
+              }
+              @media (max-width:$media-breakpoint-down-sm) {
+                  height:50vh ;
+                  }
+  
+          &-text{
+              margin-top: 5%;
+              text-align: center;
+              width: 50%;
+              color:white;
+              text-shadow: 2px 1px 2px white, 0 0 25px blue, 0 0 5px darkblue;
+              @media (max-width:$media-breakpoint-down-md) {
+                  margin-top:5% ;
+                  width: 70%;
+                  }
+              @media (max-width:$media-breakpoint-down-sm) {
+                  margin-top:15% ;
+                  width: 70%;
+                  }
+         
+          }
+          &-butterfly{
+              animation-duration: 3s;
+              animation-name: butterfly;
+              position: absolute;
+              left: 500px;
+              top:80px;
+          }
+  
+  
+          &-img{
+              margin-top:5% ;
+              
+               @media (max-width:$media-breakpoint-down-sm) {
+                  margin-top:45% ;
+                  }
+          }
+  
+      }
+      &__content{
+          padding:8% 10% ;
+          z-index: 1;
+              &-animaciones{
+                  padding-top:8%;
+                   height:550px; 
+                                  
+              }
+  
+              &-big{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @extend %circle;
+                  width: 200px;
+                  height: 200px;
+                  background: $background-multicolor;
+                  top:100px;
+                  right: 300px;
+              }
+              &-one{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @extend %circle;
+                  left: -70px;
+                  top:-70px;
+                  background-color:$pink-multicolor;
+                  z-index: -1;
+              
+                  
+              }
+              &-two{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @extend %circle;
+                  left: 220px;
+                  top:0px;
+                  z-index: -1;
+                  background-color: $pink-multicolor;
+              }
+              &-three{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  @extend %circle;
+                  left: 50px;
+                  top:220px;
+                  background-color: $pink-multicolor;
+                  z-index: -1;
+              }
+              .slick-slide{
+                  text-align: center !important;
+              }
+  
+  @keyframes butterfly {
+      0%{
+          left: -60px;
+          top:80px;
+          content: ""; 
+      }
+      25% {
+          left: 60px;
+          top:60px;
+        }
+        50% {
+          left: 120px;
+          top:80px;
+        }
+        75% {
+          left: 300px;
+          top:60px;
+        }
+      
+        100% {
+          left: 500px;
+          top:80px;
+        }
+      
+  }
+  
+  @keyframes ellipsis-dot { 
+   
+      25% {  content: "";    } 
+   
+      50% {  content: ".";  } 
+   
+      75% {  content: "..";  } 
+   
+      100% {  content: "...";  } 
+   
+  }
+  @keyframes circleOne{
+      from {
+          left: 60px;
+          top:60px;
+        }
+      
+        to {
+          left: -60px;
+          top:-60px;
+        }
+      
+    }
+  
+    @keyframes circleTwo{
+      from {
+          left: 20px;
+          top:20px;
+        }
+      
+        to {
+          left: 220px;
+          top:0px;
+        }
+    }
+  
+    @keyframes circleThree{
+      from {
+          left: 20px;
+          top:20px;
+        }
+      
+        to {
+          left: 50px;
+          top:220px;
+        }
+    }
+          
+          &-carousel{
+          
+              
+              &-page{
+                
+                  margin-top: 25%;
+                  height: 260px;
+                  color: #fff;
+                  line-height: 160px;
+                  text-align: center;
+                  background: $background-multicolor;
+
+                  
+                  &-card{
+                      
+                      width: 300px;
+                  }
+              }
+             
+          }
+  
+   
+        }
+  
+      &__footer{
+          padding: 20px;
+          margin-top:5%;
+      }
+         
+       
+     
+  
+  }

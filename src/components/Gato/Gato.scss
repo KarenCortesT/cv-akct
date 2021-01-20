@@ -1,0 +1,40 @@
+
+.gato{
+    &__board-row{
+        &:after{
+            clear:both;
+            content: "";
+            display: table;
+        }
+    }
+
+    &__status {
+        margin-bottom: 10px;
+    }
+}
+
+.square{
+    background: #fff;
+    border:1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 130px;
+    text-align: center;
+    width: 130px;
+
+    &:focus{
+        outline:none;
+    }
+
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+
+    &__board{
+        border:1px solid green;
+    }
+}

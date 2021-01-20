@@ -1,0 +1,31 @@
+@import "./variables";
+
+
+h1{
+    color:$font-dark-light;
+    font-size: 0em + 50px/ $defaultFontSize;
+    font-weight: 600;
+    @media (max-width:$media-breakpoint-down-sm) {
+        font-size: 0em + 36px/ $defaultFontSize;
+   
+    }
+}
+
+h2{
+    color:$font-dark-light;
+    font-size: 0em + 40px/ $defaultFontSize;
+    @media (max-width:$media-breakpoint-down-sm) {
+        font-size: 0em + 27px/ $defaultFontSize;
+        line-height:30px ;
+   
+    }
+}
+h3{
+    color:$font-grey;
+    font-size: 0em + 20px/ $defaultFontSize;
+    @media (max-width:$media-breakpoint-down-sm) {
+        font-size: 0em + 17px/ $defaultFontSize;
+   
+    }
+}
+
